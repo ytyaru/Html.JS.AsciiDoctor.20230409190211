@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="author" content="ytyaru">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">
+<link rel="icon" href="asset/image/avator.png">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="0/lib/ascii-doctor/1.5.9/asciidoctor.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="0/lib/ascii-doctor/1.5.9/asciidoctor.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+<script>
+window.addEventListener('DOMContentLoaded', async(event) => {
+    console.log('DOMContentLoaded!!');
+    const res = await fetch(`index.ad`)
+    const ad = await res.text()
+    let asciidoctor = Asciidoctor()
+    let html = asciidoctor.convert(ad)
+    //let html = asciidoctor.convert('= あいう\n\n== あああ\n\nHello, _Asciidoctor_')
+    //let html = asciidoctor.convert('*This* is Asciidoctor.<br>aaaa', { standalone: true })
+    //console.log(html)
+    //let doc = asciidoctor.convertFile('index.ad')
+    //let html = doc.convert()
+    /*
+    var doc = asciidoctor.convertFile('/path/to/file.adoc')
+    console.log(doc)
+    var html = asciidoctor.convertFile('/path/to/file.adoc', { to_file: false, standalone: true })
+    console.log(html)
+    var doc = asciidoctor.loadFile('file.adoc')
+    console.log(doc.getDocumentTitle())
+    console.log(doc.getAttributes())
+    doc.convert()
+    var doc = asciidoctor.load('Hello, _Asciidoctor_')
+    */
+    //const ad = `= 見出し\n\n文章。`
+    //const html = asciidoctor.convert(ad)
+    //console.log(html)
+    document.getElementById('content').innerHTML = html
+
+});
+window.addEventListener('beforeunload', (event) => {
+    console.log('beforeunload!!');
+});
+
+    </script>
+    <div id="content"></div>
+    <p>１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０</p>
+    <footer>
+        <span>© 2021 ytyaru</span>
+        <a title="CC-BY-SA" \
+           href="https://creativecommons.org/licenses/by-sa/3.0/deed.ja"
+           style="text-decoration: none;">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Cc.logo.circle.svg"></img>
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Cc-by_new.svg"></img>
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Cc-sa.svg"></img>
+            <!--<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/CC-BY-SA_icon.svg"></img>-->
+    </a></footer>
+</body>
+</html>
+<!-- https://coliss.com/articles/build-websites/operation/work/html-template-for-web-apps-or-sites.html -->
+<!-- https://coliss.com/articles/build-websites/operation/work/html5-template-for-2018.html -->

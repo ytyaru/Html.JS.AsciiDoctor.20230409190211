@@ -1,0 +1,11 @@
+= AsciiDoctor
+:0: 0/index.html
+:1: 1/index.html
+
+== Index
+0. link:0/index.html[text]
+0. link:1/index.html[file]
+
+0. {0}[0 text]
+0. {1}[1 file]
+
