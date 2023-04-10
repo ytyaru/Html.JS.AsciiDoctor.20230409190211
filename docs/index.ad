@@ -3,8 +3,9 @@
 :1: 1/index.html
 
 == Index
-0. link:0/index.html[text]
-0. link:1/index.html[file]
+0. link:0/index.html[convert()]
+0. link:1/index.html[loadFile(), convertFile() ERROR]
+0. link:2/index.html[convert(fetch(path)) なぜか相対パスでfetchできない]
 
 0. {0}[0 text]
 0. {1}[1 file]
