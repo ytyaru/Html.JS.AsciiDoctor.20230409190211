@@ -1,0 +1,57 @@
+= AsciiDoctor ドキュメント属性
+:hardbreaks:
+:hardbreaks-option:
+:author: ytyaru
+:description: AsciiDoctorのドキュメント属性を試す。
+:0: https://www.google.co.jp
+:1: link:https://www.google.co.jp
+:2: link:https://www.google.co.jp[ラベル付きリンク]
+:3: link:https://www.google.co.jp[ラベル付きリンク] + \
+    複数行データ
+:link-hardbreak: link:https://github.com/asciidoctor/asciidoctor/blob/main/lib/asciidoctor/document.rb#L388[:hardbreaks:]
+== AsciiDoctor ドキュメント属性
+
+　これはパラグラフです。
+　続けて同じパラグラフの二行目です。
+
+　２つ目のパラグラフです。
+
+　これはlink:https://www.google.co.jp[Google]へのリンクです。
+
+　これはlink:{0}[ラベル付きリンク]です。
+　これは{1}[ラベル付きリンク]です。
+　これは{2}です。
+
+Ruby is red.
+Java is beige.
+
+[%hardbreaks]
+Ruby is red.
+Java is beige.
+　これはlink:{0}[ラベル付きリンク]です。
+　これは{1}[ラベル付きリンク]です。
+　これは{2}です。
+　これは{3}です。
+
+　パラグラフはどうなる？
+　改行が２つあると別のパラグラフになる。
+　`[%hardbreaks]`はパラグラフ１つのみ。
+　`:hardbreaks-option:`は効かない。
+
+　文書属性で改行を反映させるには{link-hardbreak}を使う。`:hardbreaks-option:`ではない。バージョン差によるもの。
+
+
+　パラグラフ間の改行は有効か？
+　結論：消えてしまう。
+
+NOTE: NOTE
+
+TIP: TIP
+
+IMPORTANT: IMPORTANT
+
+CAUTION: CAUTION
+
+WARNING: WARNING
+
+
